@@ -1,10 +1,12 @@
 """Hub Model Adoption Advisor  -  run with:  streamlit run app.py"""
-   import datetime as dt
-   import os
-   from pathlib import Path
-   import numpy as np, pandas as pd, streamlit as st
+import datetime as dt
+import os, sys
+from pathlib import Path
+import numpy as np, pandas as pd, streamlit as st
 
-   os.chdir(Path(__file__).resolve().parent)  # make data/ and artifacts/ paths work from any folder
+HERE = Path(__file__).resolve().parent
+os.chdir(HERE)                      # make data/ and artifacts/ paths work from any folder
+sys.path.insert(0, str(HERE))       # make the hubmoe package importable
 
 st.set_page_config(page_title="Hub Model Adoption Advisor", page_icon="🧠", layout="wide")
 
